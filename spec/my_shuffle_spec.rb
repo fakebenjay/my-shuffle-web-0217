@@ -1,11 +1,6 @@
 describe "#my_shuffle" do
 
-  let(:cars)    { ["CR-V", "Camry", "Escape", "Forester", "Highlander"] }
-
-  it "doesn't use Ruby's shuffle method" do
-     expect_any_instance_of(Array).to_not receive(:shuffle)
-     cars.my_shuffle
-  end
+  let(:cars) { ["CR-V", "Camry", "Escape", "Forester", "Highlander"] }
 
   it "doesn't change the original array" do
     result = cars.my_shuffle
@@ -14,11 +9,8 @@ describe "#my_shuffle" do
   end
 
   it "shuffles an array of two elements" do
-    mammals = ["bear", "tiger"]
-    expect(mammals.my_shuffle).to eq(["tiger", "bear"])
-
-    birds = ["cardinal", "eagle"]
-    expect(birds.my_shuffle).to eq(["eagle", "cardinal"])
+    expect(["bear", "tiger"].my_shuffle).to eq(["tiger", "bear"])
+    expect(["cardinal", "eagle"].my_shuffle).to eq(["eagle", "cardinal"])
   end
 
   it "shuffles an array of three elements" do

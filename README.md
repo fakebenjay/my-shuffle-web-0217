@@ -30,7 +30,7 @@ animals
 
 ## Notes
 
-Do not call on Ruby's `#shuffle` method to accomplish this task.
+You may call on Ruby's `#shuffle` method to accomplish this task. Just remember that it may not be enough!
 
 ## Resources
 
