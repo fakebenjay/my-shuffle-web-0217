@@ -3,11 +3,11 @@ class Array
   def my_shuffle
     return self if self.length <= 1
     return [self[1], self[0]] if self.length == 2
-    shuffled = self.shuffle
-    until completely_different?(shuffled)
-      shuffled = self.shuffle
+    reordered = self.shuffle
+    until completely_different?(reordered)
+      reordered = self.shuffle
     end
-    return shuffle
+    reordered
   end
 
   def completely_different?(shuffled)
