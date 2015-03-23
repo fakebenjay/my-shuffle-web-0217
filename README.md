@@ -6,7 +6,7 @@ resources: 1
 
 # My Shuffle
 
-![zipper image](https://s3-us-west-2.amazonaws.com/web-dev-readme-photos/cs/zipper.jpg)
+![card image](https://s3-us-west-2.amazonaws.com/web-dev-readme-photos/cs/shuffle.jpg)
 
 ## Objective
 
