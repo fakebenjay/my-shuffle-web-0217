@@ -1,13 +1,16 @@
 describe "#my_shuffle" do
 
-  let(:cars)        { ["CR-V",     "Camry",     "Escape", "Forester", "Highlander"] }
-  let(:animals)     { ["aardvark", "hedgehog", "serval",  "wallaby"       ] }
-  let(:plants)      { ["aloe",     "hedge",    "sage",    "weeping willow"] }
-  let(:ingredients) { ["anise",    "honey",    "scallop", "wasabi"        ] }
+  let(:cars)    { ["CR-V", "Camry", "Escape", "Forester", "Highlander"] }
 
   it "doesn't use Ruby's shuffle method" do
      expect_any_instance_of(Array).to_not receive(:shuffle)
      cars.my_shuffle
+  end
+
+  it "doesn't change the original array" do
+    result = cars.my_shuffle
+    expect(cars).to eq(cars)
+    expect(result).to_not eq(cars)
   end
 
   it "shuffles an array of two elements" do
@@ -19,30 +22,33 @@ describe "#my_shuffle" do
   end
 
   it "shuffles an array of three elements" do
-    some_animals = ["aardvark", "hedgehog", "wallaby"]
-    result = some_animals.my_shuffle
-    some_animals.each do |animal|
-      result_index = result.index_of?(animal)
-      orginal_index = some_animals.index_of?(animal)
-      expect(result_index).to_no eq(orginal_index)
-    end 
+    animals = ["aardvark", "hedgehog", "wallaby"]
+    result = animals.my_shuffle
+    expect(result.length).to eq(animals.length)
+    animals.each_with_index do |animal, i|
+      expect(result.index(animal)).to_not eq(i)
+    end
   end
 
   it "shuffles an array of four elements" do
-    [animals, plants, ingredients].each do |array|
-      result = array.my_shuffle
-      expect(result.length).to eq(array.length)
-      array.each_with_index do |element, i|
-        result_index = result.index_of?(element)
-        expect(result_index).to_not eq(i)
-      end
+    animals = ["aardvark", "hedgehog",  "serval", "wallaby"]
+    result = animals.my_shuffle
+    expect(result.length).to eq(animals.length)
+    animals.each_with_index do |animal, i|
+      expect(result.index(animal)).to_not eq(i)
+    end
+  end
+
+  it "shuffles an array of five elements" do
+    result = cars.my_shuffle
+    expect(result.length).to eq(cars.length)
+    cars.each_with_index do |car, i|
+      expect(result.index(car)).to_not eq(i)
     end
   end
 
   it "returns an unchanged array if given an array has length of 1" do
-    numbers = [1]
-    letters = ["a"]
-    arrays = [numbers, letters]
-    arrays.each { |array| expect(array.my_shuffle).to eq(array) }
+    expect([1].my_shuffle).to eq([1])
+    expect(["a"].my_shuffle).to eq(["a"])
   end
 end
