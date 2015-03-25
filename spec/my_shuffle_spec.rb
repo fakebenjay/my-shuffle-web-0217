@@ -8,6 +8,11 @@ describe "#my_shuffle" do
     expect(result).to_not eq(cars)
   end
 
+  it "doesn't use #rotate" do
+    expect_any_instance_of(Array).to_not receive(:rotate)
+    result = cars.my_shuffle
+  end
+
   it "shuffles an array of two elements" do
     expect(["bear", "tiger"].my_shuffle).to eq(["tiger", "bear"])
     expect(["cardinal", "eagle"].my_shuffle).to eq(["eagle", "cardinal"])
@@ -54,6 +59,15 @@ describe "#my_shuffle" do
     expect(result.length).to eq(cars.length)
     cars.each_with_index do |car, i|
       expect(result.index(car)).to_not eq(i)
+    end
+  end
+
+  it "actually shuffles, doesn't just move elements up one/down one" do
+    filters = ["Kelvin", "1977", "Walden", "Hudson", "Sutro", "Hefe"]
+    result = filters.my_shuffle
+    6.times do 
+      filters = filters.rotate
+      expect(result).to_not eq(filters)
     end
   end
 
