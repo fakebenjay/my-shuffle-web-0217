@@ -31,3 +31,5 @@ You may call on Ruby's `#shuffle` method to accomplish this task. Just remember 
 ## Resources
 
 * [Ruby's Shuffle Method](http://ruby-doc.org/core-2.2.0/Array.html#method-i-shuffle)
+
+<a href='https://learn.co/lessons/my-shuffle' data-visibility='hidden'>View this lesson on Learn.co</a>
