@@ -32,4 +32,4 @@ You may call on Ruby's `#shuffle` method to accomplish this task. Just remember 
 
 * [Ruby's Shuffle Method](http://ruby-doc.org/core-2.2.0/Array.html#method-i-shuffle)
 
-<a href='https://learn.co/lessons/my-shuffle' data-visibility='hidden'>View this lesson on Learn.co</a>
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/my-shuffle' title='My Shuffle'>My Shuffle</a> on Learn.co and start learning to code for free.</p>
